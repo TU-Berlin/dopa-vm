@@ -15,7 +15,7 @@ DOPA platform software Stratosphere.
 You'll need to install recent versions of Vagrant and VirtualBox.
 
  * VirtualBox: https://www.virtualbox.org/wiki/Downloads
- * Vagrant: http://downloads.vagrantup.com/
+ * Vagrant: http://www.vagrantup.com/downloads.html
 
 Next, you'll need a copy of the vm that you can download from this GIT repository.
 
