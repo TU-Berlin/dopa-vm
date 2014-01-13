@@ -38,8 +38,8 @@ define git::clone(
     $branch='',
     $ssh='',
     $ensure='present',
-    $owner='root',
-    $group='root',
+    $owner='vagrant',
+    $group='vagrant',
     $timeout='0',
     $depth='full',
     $mode=0755) {
