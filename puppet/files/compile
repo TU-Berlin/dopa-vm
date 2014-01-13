@@ -17,7 +17,7 @@ cp -r /dopa-vm/meteor-dev/stratosphere-dist/target/stratosphere-dist-0.4-SNAPSHO
 #cp -r "meteor-dev/stratosphere-dist/target/stratosphere-dist-$VERSION-bin/stratosphere-$VERSION/*" stratosphere/
 #cp -r "stratosphere-dev/stratosphere-dist/target/stratosphere-dist-$STRATOVER-bin/stratosphere-$STRATOVER/*" stratosphere/
 
-cd ../stratosphere
+cd /dopa-vm/stratosphere
 git add -A
 MSG="compiled at $(date)"
 echo "$MSG"
