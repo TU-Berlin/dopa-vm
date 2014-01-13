@@ -5,9 +5,12 @@ VERSION="0.4-SNAPSHOT"
 cd stratosphere-dev
 git checkout IMRproduction
 mvn -Dmaven.test.skip=true install
+cd ../testing-dev
+git checkout IMRproduction
+mvn -Dmaven.test.skip=true install
 cd ../meteor-dev
 git checkout IMRproduction
-mvn -Dmaven.test.skip=true package
+mvn -Dmaven.test.skip=true install
 
 cd ..
 cp -r /dopa-vm/meteor-dev/stratosphere-dist/target/stratosphere-dist-0.4-SNAPSHOT-bin/stratosphere-0.4-SNAPSHOT/* stratosphere/
