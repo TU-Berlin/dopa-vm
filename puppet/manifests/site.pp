@@ -23,6 +23,5 @@ import 'manifests.d/*.pp'
 
 node default { #relates to config.vm.hostname
     include role::stratotester
-    include role::opendata
     include role::cdh4pseudo
 }
