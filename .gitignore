@@ -9,5 +9,6 @@ meteor
 meteor-dev
 scheduler-dev
 packages-dev
+testing-dev
 /compile
 /puppet/manifests/manifests.d

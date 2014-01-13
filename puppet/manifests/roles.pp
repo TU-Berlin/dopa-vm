@@ -30,21 +30,29 @@ class role::stratodev {
     $meteorDir = '/dopa-vm/meteor-dev'
     $packagesDir = '/dopa-vm/packages-dev'
     $schedulerDir = '/dopa-vm/scheduler-dev'
+    $testingDir = '/dopa-vm/testing-dev'
 
     @git::clone { 'TU-Berlin/stratosphere':
-    directory => $ozoneDir,
+        directory => $ozoneDir,
+        branch => 'IMRproduction'
     }
 
     @git::clone { 'TU-Berlin/stratosphere-sopremo':
-    directory => $meteorDir,
+        directory => $meteorDir,
+        branch => 'IMRproduction'
+    }
+
+    @git::clone { 'TU-Berlin/stratosphere-testing':
+        directory => $testingDir,
+        branch => 'IMRproduction'
     }
 
     @git::clone { 'TU-Berlin/dopa-scheduler':
-    directory => $schedulerDir,
+        directory => $schedulerDir
     }
 
     @git::clone { 'TU-Berlin/dopa-packages':
-    directory => $packagesDir,
+        directory => $packagesDir
     }
 
     file { '/dopa-vm/compile':
