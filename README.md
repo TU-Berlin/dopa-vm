@@ -89,6 +89,14 @@ Check the checkbox in the right frame of the new word count example and spcify e
 as arguments.
 Click *run job* and click run on the next page again.
 
+## Meteor
+### submitting a simple meteor job via command line
+
+> cd /dopa-vm
+> sudo ./stratosphere/bin/meteor-client.sh script.meteor --wait
+
+this should copy test.json to test_result.json
+
 ## HDFS and HBASE
 
 The dopa-vm is equipped with a standalone cloundera (cdh4) installation.
