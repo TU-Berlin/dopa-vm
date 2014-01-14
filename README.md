@@ -115,6 +115,13 @@ Access
 The HBASE support is limit at the moment and needs some manual tuning.
 See this [changeset.](https://gerrit.wikimedia.org/r/#/c/99381/)
 
+##Troubleshooting
+
+If you have problem to access the internet from inside the vm (you can test that via ping google.com ) run the following command to reset the virtual nic:
+
+>sudo ifdown eth0 && sudo ifup eth0
+
+
 
 ## Bug Reporting
 
