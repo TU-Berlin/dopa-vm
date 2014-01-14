@@ -56,6 +56,7 @@ class role::stratodev {
         mode   => '0755',
         source => 'puppet:///files/compile',
     }
+
     package { [ 'maven' ]:
         ensure => present,
     }
@@ -116,7 +117,11 @@ class role::dopaprivate {
   mode => 700,
   owner => 'vagrant'
 }
-
+    file { '/dopa-vm/dompile':
+        ensure => present,
+        mode   => '0755',
+        source => 'puppet:///files/dompile',
+    }
     @git::clone { 'TU-Berlin/dopa-packages':
         directory => $packagesDir
     }

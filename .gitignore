@@ -12,5 +12,6 @@ packages-dev
 testing-dev
 okkam-dev
 /compile
+/dompile
 /puppet/manifests/manifests.d
 /puppet/files/dopa.ppk

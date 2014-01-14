@@ -1,0 +1,9 @@
+#!/bin/bash
+cd /dopa-vm/okkam-dev/json-utils
+mvn -Dmaven.test.skip=true install
+cd ../okkam-index-client
+mvn -Dmaven.test.skip=true install
+cd ../dopa-okkam
+mvn -Dmaven.test.skip=true install
+cd /dopa-vm/dopa-packages
+mvn -Dmaven.test.skip=true install
