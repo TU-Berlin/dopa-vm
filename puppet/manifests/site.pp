@@ -21,7 +21,6 @@ import 'base.pp'
 import 'roles.pp'
 import 'manifests.d/*.pp'
 
-node default { #relates to config.vm.hostname
-    include role::stratotester
-    include role::cdh4pseudo
+node default {
+	#default roles are enabled now
 }
