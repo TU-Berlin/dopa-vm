@@ -28,7 +28,6 @@ class role::stratodev {
     class { 'git': }
     $ozoneDir = '/dopa-vm/stratosphere-dev'
     $meteorDir = '/dopa-vm/meteor-dev'
-    $packagesDir = '/dopa-vm/packages-dev'
     $schedulerDir = '/dopa-vm/scheduler-dev'
     $testingDir = '/dopa-vm/testing-dev'
 
@@ -51,9 +50,6 @@ class role::stratodev {
         directory => $schedulerDir
     }
 
-    @git::clone { 'TU-Berlin/dopa-packages':
-        directory => $packagesDir
-    }
 
     file { '/dopa-vm/compile':
         ensure => present,
@@ -104,8 +100,32 @@ class role::opendata {
 # Provisions a pseudo distributes Cloudera 4 instanstace.
 class role::cdh4pseudo {
     import 'hadoop.pp'
-    #include ::apt
     include my::hadoop::master
     include my::hbase
 }
 
+# == Class: role::dopaprivate
+# Enables roles that require access to the private dopa
+# repositories
+class role::dopaprivate {
+    $packagesDir = '/dopa-vm/packages-dev'
+    $okkamDir = '/dopa-vm/okkam-dev'
+
+    file { '/home/vagrant/.ssh/id_rsa':
+  source => 'puppet:///files/dopa.ppk',
+  mode => 700,
+  owner => 'vagrant'
+}
+
+    @git::clone { 'TU-Berlin/dopa-packages':
+        directory => $packagesDir
+    }
+
+    @git::clone { 'TU-Berlin/dopa-okkam':
+        remote => 'git@github.com:TU-Berlin/dopa-okkam.git',
+        ssh => '/dopa-vm/puppet/files/ssh.sh',
+        directory => $okkamDir,
+        require => File['/home/vagrant/.ssh/id_rsa']
+    }
+
+}

@@ -10,5 +10,7 @@ meteor-dev
 scheduler-dev
 packages-dev
 testing-dev
+okkam-dev
 /compile
 /puppet/manifests/manifests.d
+/puppet/files/dopa.ppk
