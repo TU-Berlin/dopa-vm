@@ -5,5 +5,8 @@ cd ../okkam-index-client
 mvn -Dmaven.test.skip=true install
 cd ../dopa-okkam
 mvn -Dmaven.test.skip=true install
-cd /dopa-vm/dopa-packages
-mvn -Dmaven.test.skip=true install
+cd /dopa-vm/packages-dev
+mvn -Dmaven.test.skip=true package
+cp /dopa-vm/packages-dev/sopremo-dopa/target/sopremo-dopa-0.0.1-SNAPSHOT.jar /dopa-vm/stratosphere/lib/
+#cp /dopa-vm/packages-dev/target/sopremo-package-*.jar /dopa-vm/stratosphere/lib/dopa-0.4-hadoop2-SNAPSHOT.jar
+
