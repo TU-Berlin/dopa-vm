@@ -9,7 +9,27 @@ class my::hadoop {
     }
 }
 
+class zookeeper{     
+	file { '/var/lib/zookeeper':
+ 		ensure => "directory",
+		mode   => 777
+	}
+	package { 'zookeeper-server':
+  		ensure => installed,
+	}
+	exec{ 'config-zookeeper':
+		command => '/usr/bin/service zookeeper-server init',
+		creates => '/var/lib/zookeeper/version-2',
+		require=> Package['zookeeper-server']
+	}
+	service{ 'zookeper server':
+		name   => 'zookeeper-server',
+		ensure => 'running',
+		require => Exec['config-zookeeper']
+	}
+	
 
+}
 class my::hadoop::master inherits my::hadoop {
     include cdh4::hadoop::master
     include cdh4::hadoop::worker
@@ -17,6 +37,7 @@ class my::hadoop::master inherits my::hadoop {
 
 
 class my::hbase {
+	include zookeeper
     class {'cdh4::hbase':
         master_domain       => 'localhost',
         zookeeper_master    => 'localhost',
