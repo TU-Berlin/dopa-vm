@@ -50,7 +50,7 @@ http://stackoverflow.com/questions/9885108/ssh-to-vagrant-box-in-windows
 
 Follow the installation instructions.
 Run `vagrant list-roles` to see the available roles.
-Use vagrant `enable-role stratodev` to enable the developer role and
+Use `vagrant enable-role stratodev` to enable the developer role and
 `vagrant provision` to apply the changes.
 
 Vagrant will download the essential source directories from the remote GIT repository.
@@ -82,7 +82,7 @@ The wordcount example is preshipped with your Stratosphere installation. Upload
 
 from the your local download copy of the DOPA-VM to the web interface.
 
-Check the checkbox in the right frame of the new word count example and spcify e.g.
+Check the checkbox in the right frame of the new word count example and specify e.g.
 
 > 4 file:///dopa-vm/data/opendata/wikienmath.xml file:///dopa-vm/data/output/wordcount1.csv
 
@@ -93,6 +93,7 @@ Click *run job* and click run on the next page again.
 ### submitting a simple meteor job via command line
 
 > cd /dopa-vm
+
 > sudo ./stratosphere/bin/meteor-client.sh script.meteor --wait
 
 this should copy test.json to test_result.json
