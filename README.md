@@ -98,6 +98,12 @@ Click *run job* and click run on the next page again.
 
 this should copy test.json to test_result.json
 
+## DOPA (private)
+If you want to use the features that are accessible by DOPA members only
+you have to copy your private key for the git repositories to
+dopa-vm/puppet/files/dopa.ppk. In unix this can be done with the following command
+> cp ~/.ssh/id_rsa puppet/files.dopa.ppk && chmod 700 puppet/files.dopa.ppk
+
 ## HDFS and HBASE
 
 The dopa-vm is equipped with a standalone cloundera (cdh4) installation.
