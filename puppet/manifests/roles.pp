@@ -57,7 +57,7 @@ class role::stratodev {
         source => 'puppet:///files/compile',
     }
 
-    package { [ 'maven' ]:
+    package { [ 'maven', 'rabbitmq-server' ]:
         ensure => present,
     }
 }
