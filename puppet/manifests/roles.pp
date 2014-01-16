@@ -59,7 +59,20 @@ class role::stratodev {
 
     package { [ 'maven', 'rabbitmq-server' ]:
         ensure => present,
+        notify => Exec['view-rabbits'],
     }
+
+    exec{ 'kill-rabbits':
+        command => '/usr/sbin/rabbitmqctl stop_app && /usr/sbin/rabbitmqctl reset && /usr/sbin/rabbitmqctl start_app',
+        user    => 'root'
+    }
+
+    exec{ 'view-rabbits':
+        command => '/usr/lib/rabbitmq/lib/rabbitmq_server-2.7.1/sbin/rabbitmq-plugins enable rabbitmq_management && service rabbitmq-server restart && touch /srv/rabbit_mq_mgnt_installed',
+        user    => 'root',
+        creates => '/srv/rabbit_mq_mgnt_installed',
+    }
+	
 }
 # == Class: role::stratotester
 # Provisions a Stratosphere instance powered by Oracle Java.

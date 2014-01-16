@@ -58,6 +58,11 @@ Vagrant.configure('2') do |config|
         id: 'http-5',
         auto_correct: true
 
+    config.vm.network :forwarded_port,
+        guest: 55672,
+        host: 55672,
+        id: 'rabbit-mq-mgnt',
+        auto_correct: true
     config.vm.synced_folder '.', '/dopa-vm',
         id: 'vagrant-root',
         owner: 'vagrant',
