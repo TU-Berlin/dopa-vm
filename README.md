@@ -102,7 +102,7 @@ this should copy test.json to test_result.json
 If you want to use the features that are accessible by DOPA members only
 you have to copy your private key for the git repositories to
 dopa-vm/puppet/files/dopa.ppk. In unix this can be done with the following command
-> cp ~/.ssh/id_rsa puppet/files.dopa.ppk && chmod 700 puppet/files.dopa.ppk
+> cp ~/.ssh/id_rsa dopa-vm/puppet/files/dopa.ppk && chmod 700 dopa-vm/puppet/files/dopa.ppk
 
 ## HDFS and HBASE
 
