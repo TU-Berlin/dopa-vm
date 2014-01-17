@@ -124,6 +124,7 @@ class role::cdh4pseudo {
 class role::dopaprivate {
     $packagesDir = '/dopa-vm/packages-dev'
     $okkamDir = '/dopa-vm/okkam-dev'
+    $appDir = '/dopa-vm/applications-dev'
 
     file { '/home/vagrant/.ssh/id_rsa':
   source => 'puppet:///files/dopa.ppk',
@@ -143,6 +144,13 @@ class role::dopaprivate {
         remote => 'git@github.com:TU-Berlin/dopa-okkam.git',
         ssh => '/dopa-vm/puppet/files/ssh.sh',
         directory => $okkamDir,
+        require => File['/home/vagrant/.ssh/id_rsa']
+    }
+
+    @git::clone { 'TU-Berlin/dopa-applications':
+        remote => 'git@github.com:TU-Berlin/dopa-applications.git',
+        ssh => '/dopa-vm/puppet/files/ssh.sh',
+        directory => $appDir,
         require => File['/home/vagrant/.ssh/id_rsa']
     }
 

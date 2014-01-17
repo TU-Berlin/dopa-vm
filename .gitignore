@@ -11,6 +11,7 @@ scheduler-dev
 packages-dev
 testing-dev
 okkam-dev
+applications-dev
 /compile
 /dompile
 /puppet/manifests/manifests.d
