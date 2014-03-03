@@ -16,3 +16,4 @@ applications-dev
 /dompile
 /puppet/manifests/manifests.d
 /puppet/files/dopa.ppk
+/local-testdata

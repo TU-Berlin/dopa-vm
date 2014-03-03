@@ -33,12 +33,12 @@ class role::stratodev {
 
     @git::clone { 'TU-Berlin/stratosphere':
         directory => $ozoneDir,
-        branch => 'IMRproduction'
+        branch => 'IMRproduction-0.5-snapshot'
     }
 
     @git::clone { 'TU-Berlin/stratosphere-sopremo':
         directory => $meteorDir,
-        branch => 'IMRproduction'
+        branch => 'IMR-production-0.5-shnapshot'
     }
 
     @git::clone { 'TU-Berlin/stratosphere-testing':

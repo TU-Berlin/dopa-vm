@@ -3,13 +3,13 @@ STRATOVER="0.4-alpha.0-SNAPSHOT"
 VERSION="0.4-SNAPSHOT"
 
 cd stratosphere-dev
-git checkout IMRproduction
+git checkout IMRproduction-0.5-snapshot
 mvn -Dmaven.test.skip=true install
-cd ../testing-dev
-git checkout IMRproduction
-mvn -Dmaven.test.skip=true install
+#cd ../testing-dev
+#git checkout IMRproduction
+#mvn -Dmaven.test.skip=true install
 cd ../meteor-dev
-git checkout IMRproduction
+git checkout IMR-production-0.5-shnapshot
 mvn -Dmaven.test.skip=true install
 
 cd ..
