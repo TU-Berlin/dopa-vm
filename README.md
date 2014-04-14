@@ -63,9 +63,9 @@ Vagrant will download the essential source directories from the remote GIT repos
 
 ## Getting started
 
-There are two main entry for new users. If you are a experienced JAVA developer,
+There are two main entries for new users. If you are an experienced JAVA developer,
 are familar with the MapReduce concept and you want to model your data flow graphs
-by your self you probably want to work on the PACT level.
+by yourself you probably want to work on the PACT level.
 Otherwise, it might be easier to start with a simple meteor program.
 
 ### PACT
